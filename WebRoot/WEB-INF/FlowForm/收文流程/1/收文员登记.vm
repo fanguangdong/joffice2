@@ -1,0 +1,333 @@
+ArchivesRecStartView = Ext.extend(Ext.Panel, {
+
+	constructor : function(config) {
+		Ext.applyIf(this, config);
+		this.init();
+		ArchivesRecStartView.superclass.constructor.call(this, {
+					// height:300,
+					width : '90%',
+					// id : 'ArchivesRecStartView',
+					layout : 'form',
+					title : '收文员登记',
+					bodyStyle : 'padding:10px',
+					items : this.dataPanel
+				});
+		this.loadArch();
+		var jsArr = [__ctxPath + '/js/archive/ArchivesDocForm.js',
+				__ctxPath + '/js/archive/ArchivesDocHistoryWin.js',
+				__ctxPath + '/js/archive/ArchiveTypeTempView.js',
+				__ctxPath + '/js/archive/ArchTemplateView.js',
+				__ctxPath + '/js/archive/ArchTemplateSelector.js',
+				__ctxPath + '/js/selector/GlobalTypeSelector.js'];
+		$ImportSimpleJs(jsArr, null);
+	},
+	init : function() {
+		var contentPanel = new Ext.Panel({
+					xtype : 'panel',
+					height : 50,
+					border : false,
+					autoScroll : true,
+					html : ''
+				});
+		this.contentPanel = contentPanel;
+		this.dataPanel = new Ext.Panel({
+			layout : 'form',
+			border : false,
+			width : '80%',
+			items : [{
+						//原公文ID,假如新建收文流程则为空
+						name : 'arvhies.orgArchivesId',
+						xtype : 'hidden',
+						value : this.archivesId == null ? '' : this.archivesId
+					}, {
+						//签收记录表ID
+						name : 'archDepId',
+						xtype : 'hidden',
+						value : this.archDepId?this.archDepId:null
+					},{
+						fieldLabel : '公文类型',
+						name : 'archives.archType',
+						xtype : 'hidden',
+						value : 1
+						// 1表示为收文
+					}, {
+						fieldLabel : '发文部门ID',
+						name : 'archives.depId',
+						xtype : 'hidden'
+					}, {
+						name : 'recTypeId',
+						xtype : 'hidden'
+
+					}, {
+						//配置流程启动前公文执行的方法
+						name : 'preHandler',
+						xtype : 'hidden',
+						value : 'archivesService.startRecFlow'
+					},{
+						//配置流程启动后公文执行的方法
+						name : 'afterHandler',
+						xtype : 'hidden',
+						value : 'archivesService.setRunId'
+					}, {
+						xtype : 'compositefield',
+						fieldLabel : '所属类型',
+						items : [{
+									name : 'recTypeName',
+									xtype : 'textfield',
+									width : 250,
+									readOnly : true,
+									allowBlank : false
+								}, {
+									xtype : 'button',
+									text : '选择类型',
+									iconCls : 'btn-select',
+									scope : this,
+									handler : function() {
+										var fPanel = this;
+										new GlobalTypeSelector({
+											catKey : 'ARCHIVES_REC_TYPE',
+											isSingle : true,
+											callback : function(typeId,
+													typeName) {
+												fPanel
+														.getCmpByName('recTypeId')
+														.setValue(typeId);
+												fPanel
+														.getCmpByName('recTypeName')
+														.setValue(typeName);
+											}
+										}).show();
+									}
+
+								}]
+					}, {
+						xtype : 'hidden',
+						name : 'signUserIds'
+					}, {
+						xtype : 'compositefield',
+						fieldLabel : '拟办人员',
+						items : [{
+									xtype : 'textarea',
+									width : 400,
+									readOnly : true,
+									name : 'archives.handlerUnames',
+									allowBlank : false,
+									blankText : '请选择拟办人员'
+								}, {
+									xtype : 'button',
+									iconCls : 'btn-mail_recipient',
+									text : '选择拟办人员',
+									scope : this,
+									handler : function() {
+										var ct = this;
+										UserSelector.getView(
+												function(id, name) {
+													ct
+															.getCmpByName('archives.handlerUnames')
+															.setValue(name);
+													ct
+															.getCmpByName('signUserIds')
+															.setValue(id);
+												}).show();
+
+									}
+								}]
+					}, {
+						xtype : 'fieldset',
+						title : '公文基本信息',
+						defaults : {
+							anchor : '98%,98%'
+						},
+						layout : 'form',
+						items : [{
+							xtype : 'container',
+							border : true,
+							layout : 'column',
+							defaultType : 'textfield',
+							items : [{
+										xtype : 'container',
+										style : 'padding-right:12px;',
+										columnWidth : .65,
+										defaults : {
+											anchor : '100%,100%'
+										},
+										defaultType : 'textfield',
+										layout : 'form',
+										items : [{
+													fieldLabel : '公文自编号',
+													name : 'archives.depSignNo',
+													allowBlank : false
+												}, {
+													fieldLabel : '发文字号',
+													name : 'archives.archivesNo',
+													allowBlank : false
+												}, {
+													fieldLabel : '发文机关或部门',
+													name : 'archives.issueDep'
+												}, {
+													fieldLabel : '文件标题',
+													name : 'archives.subject',
+													allowBlank : false
+												}, {
+													fieldLabel : '主题词',
+													name : 'archives.keywords'
+												}, {
+													fieldLabel : '公文来源',
+													name : 'archives.sources'
+												}]
+									}, {
+										xtype : 'container',
+										columnWidth : .35,
+										defaults : {
+											anchor : '100%,100%'
+										},
+										defaultType : 'textfield',
+										layout : 'form',
+										items : [{
+													fieldLabel : '紧急程度',
+													name : 'archives.urgentLevel',
+													xtype : 'combo',
+													mode : 'local',
+													allowBlank : false,
+													editable : false,
+													value : '普通',
+													triggerAction : 'all',
+													store : ['普通', '紧急', '特急',
+															'特提']
+												}, {
+													fieldLabel : '秘密等级',
+													name : 'archives.privacyLevel',
+													xtype : 'combo',
+													mode : 'local',
+													allowBlank : false,
+													editable : false,
+													triggerAction : 'all',
+													value : '普通',
+													store : ['普通', '秘密', '机密',
+															'绝密']
+												}]
+									}]
+
+						}, {
+							fieldLabel : '内容简介',
+							name : 'archives.shortContent',
+							xtype : 'textarea'
+						}]
+					}, {
+						xtype : 'fieldset',
+						title : '公文正文',
+						layout : 'column',
+						items : [{
+									columnWidth : .8,
+									layout : 'form',
+									items : contentPanel
+								}, {
+									columnWidth : .2,
+									border : false,
+									bodyStyle : 'padding:4px',
+									items : [{
+										xtype : 'button',
+										text : '添加附件',
+										scope : this,
+										iconCls : 'menu-attachment',
+										handler : function() {
+											var ct = this.dataPanel;
+											var dialog = App
+													.createUploadDialog({
+														file_cat : 'archIssue',
+														callback : function(
+																data) {
+															var fileIds = ct.getCmpByName("archivesRecfileIds");
+															for (var i = 0; i < data.length; i++) {
+																if (fileIds
+																		.getValue() != '') {
+																	fileIds
+																			.setValue(fileIds
+																					.getValue()
+																					+ ',');
+																}
+																fileIds
+																		.setValue(fileIds
+																				.getValue()
+																				+ data[i].fileId);
+																Ext.DomHelper
+																		.append(
+																				contentPanel.body,
+																				'<span><a href="#" onclick="FileAttachDetail.show('
+																						+ data[i].fileId
+																						+ ')">'
+																						+ data[i].filename
+																						+ '</a> <img class="img-delete" src="'
+																						+ __ctxPath
+																						+ '/images/system/delete.gif" onclick="ArchivesRecFormPanel.removeFile(this,'
+																						+ data[i].fileId
+																						+ ')"/>&nbsp;&nbsp;</span>');
+															}
+														}
+													});
+											dialog.show(this);
+										}
+									}, {
+										xtype : 'button',
+										text : '清除附件',
+										scope : this,
+										iconCls : 'reset',
+										handler : function() {
+											var ct = this.formPanel;
+											var fileAttaches = ct
+													.getCmpByName("archivesRecfileIds");
+											contentPanel.body.update('');
+											fileAttaches.setValue('');
+										}
+									}, {
+										xtype : 'hidden',
+										name : 'archivesRecfileIds'
+									}]
+								}]
+					}]
+		});
+
+	},
+	loadArch : function() {
+		// 加载表单对应的数据
+		if (this.archivesId != null && this.archivesId != 'undefined') {
+			var isSign = this.isSign;
+			var archivesId = this.archivesId;
+			var filePanel = this.contentPanel;
+			var fileIds = this.dataPanel.getCmpByName("archivesRecfileIds");
+			this.dataPanel.loadData({
+				url : __ctxPath + '/archive/getArchives.do?archivesId='
+						+ this.archivesId,
+				root : 'data',
+				preName : 'archives',
+				scope : this,
+
+				success:function(response,options){
+					var res=Ext.util.JSON.decode(response.responseText).data;
+					var docs = res.archivesDocs;
+					for (var i = 0; i < docs.length; i++) {
+						if (fileIds.getValue() != '') {
+							fileIds.setValue(fileIds.getValue() + ',');
+						}
+						fileIds.setValue(fileIds.getValue()
+								+ docs[i].fileAttach.fileId);
+						Ext.DomHelper
+								.append(
+										filePanel.body,
+										'<span><a href="#" onclick="FileAttachDetail.show('
+												+ docs[i].fileAttach.fileId
+												+ ')">'
+												+ docs[i].fileAttach.fileName
+												+ '</a><img class="img-delete" src="'
+												+ __ctxPath
+												+ '/images/system/delete.gif" onclick="ArchivesRecForm.removeFile(this,'
+												+ docs[i].fileAttach.fileId
+												+ ')"/>&nbsp;|&nbsp;</span>');
+					}
+				},
+				failure : function(form, action) {
+				}
+			});
+		}
+	}
+})

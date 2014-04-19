@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.htsoft.oa.model.system"> 
+  <class name="Department" table="department"> 
+    <id name="depId" type="java.lang.Long"> 
+      <generator class="sequence">
+        <param name="sequence">S_department</param>
+      </generator> 
+    </id>  
+    <property name="depName" type="java.lang.String" update="true" insert="true" access="property" column="depName" length="128" not-null="true" unique="false"/>  
+    <property name="depDesc" type="java.lang.String" update="true" insert="true" access="property" column="depDesc" length="256" not-null="false" unique="false"/>  
+    <property name="depLevel" type="java.lang.Integer" update="true" insert="true" access="property" column="depLevel" not-null="true" unique="false"/>  
+    <property name="parentId" type="java.lang.Long" update="true" insert="true" access="property" column="parentId" not-null="false" unique="false"/>  
+    <property name="path" type="java.lang.String" update="true" insert="true" access="property" column="path" length="128" not-null="false" unique="false"/> 
+  </class> 
+</hibernate-mapping>

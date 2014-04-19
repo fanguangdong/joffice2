@@ -1,0 +1,47 @@
+FlowPanel=Ext.extend(Ext.form.FormPanel,{
+	constructor:function(cfg){
+	    
+	    this.contentPanel=new Ext.Panel({
+			border:false,
+			bodyStyle:'padding:5px',
+			height:300,
+			autoScroll:true,
+			autoLoad:{
+				url:__ctxPath+ '/pages/archive/archiveIssueDetail.jsp?archivesId='+ ${archivesId}
+			}
+		});
+		FlowPanel.superclass.constructor.call(this,{
+			bodyStyle:'padding:5px',
+			title:'${activityName}',
+			height:420,
+			width:800,
+			layout:'form',
+			items:[
+						this.contentPanel,
+						{
+							name : 'preHandler',
+							value : 'archivesService.saveStatus',
+							xtype : 'hidden'
+						},{
+							name : 'afterHandler',
+							value : 'archivesService.saveDispatch',
+							xtype : 'hidden'
+						},{
+							name : 'archivesId',
+							xtype : 'hidden',
+							value : '${archivesId}'
+						},{
+							//[arch_dispatch]表类型
+							name : 'archUserType',
+							value : '2',//代表存储收文阅读意见,
+							xtype : 'hidden'
+						},{
+						//部门签收的ID,假如收文是由发文传下来,反馈意见时需要用到
+							name : 'archDepId',
+							value : '${archDepId}',
+							xtype : 'hidden'
+						}
+			]
+		});
+	}
+})

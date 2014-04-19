@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping> 
+  <class name="com.htsoft.oa.model.admin.BoardState" table="BoardState" select-before-update="false" dynamic-update="false" dynamic-insert="false" optimistic-lock="version"> 
+    <id name="stateId" column="stateId" type="java.lang.Long" length="19"> 
+      <generator class="sequence">
+        <param name="sequence">S_BoardState</param>
+      </generator> 
+    </id>  
+    <property name="stateName" type="java.lang.String" update="true" insert="true" access="property" column="stateName" length="128" not-null="true" unique="false"/> 
+  </class> 
+</hibernate-mapping>

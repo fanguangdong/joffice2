@@ -1,0 +1,84 @@
+/**
+ * @createtime:2010-01-20
+ * @author csx
+ * @description 公文拟稿发文界面
+ * @class ArchivesDraftView
+ * @extends Ext.Panel
+ */
+FlowNodeView = Ext.extend(Ext.form.FormPanel, {
+	constructor : function(_cfg) {
+		Ext.applyIf(this, _cfg);
+		this.init();
+		FlowNodeView.superclass.constructor.call(this, {
+					title : '${activityName}',
+					layout : 'fit',
+					defaults : {
+						border : false,
+						autoScroll : true
+					},
+					width : '85%',
+					height : 350,
+					buttons :  [new Ext.Button({
+									iconCls : 'btn-edit',
+									text : '修改公文',
+									scope : this,
+									handler : function(){
+										new ArchivesDraftWin({
+											archivesId : '${archivesId}',
+											detailPanel : this.detailPanel
+										}).show();
+									}
+								})
+								],
+					buttonAlign : 'center',
+					items : [
+								this.detailPanel
+							,{
+								name : 'preHandler',
+								value : 'archivesService.saveStatus',
+								xtype : 'hidden'
+							},{
+								name : 'archivesId',
+								xtype : 'hidden',
+								value : '${archivesId}'
+							},{
+								name : 'afterHandler',
+								xtype : 'hidden'
+							}]
+				});
+				var jsArr=[__ctxPath+'/js/archive/ArchivesDraftWin.js',
+				           __ctxPath+'/js/archive/ArchivesDocForm.js',
+				           __ctxPath+'/js/archive/ArchivesDocHistoryWin.js',
+				           __ctxPath+'/js/archive/ArchiveTypeTempView.js',
+				           __ctxPath+'/js/archive/ArchTemplateView.js',
+				           __ctxPath+'/js/archive/ArchTemplateSelector.js',
+				           __ctxPath+'/js/core/ntkoffice/NtkOfficePanel.js',
+				           __ctxPath + '/js/selector/SealSelector.js',
+				           __ctxPath + '/js/selector/PaintTemplateSelector.js'];
+				$ImportSimpleJs(jsArr,null);
+	},
+	/**
+	 * init the components
+	 */
+	init : function() {
+		// 显示公文详细信息
+		this.detailPanel = new Ext.Panel({
+			//title:'流程审批信息',
+			//autoHeight : true,
+			//columnWidth : 1,
+			//height : 200,
+			autoScroll:true,
+			autoLoad:{
+				url:__ctxPath+ '/pages/archive/archiveIssueDetail.jsp?archivesId='+ ${archivesId}
+			}
+		});
+	
+	}// end of init
+	,validate : function(outPanel){
+		if(outPanel.jumpRadioGroup.getValue().destType.indexOf('end')!=-1){
+			this.getCmpByName('afterHandler').setValue('archivesService.endFlow');
+		}
+		return true;
+		
+	} 
+})

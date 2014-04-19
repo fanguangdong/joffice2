@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Templates imagesBasePath="fck_template/images/">
+	<Template title="Apply Form">
+		<Description>Apply Form for the marriages</Description>
+		<Html>
+			<![CDATA[
+				<table cellspacing="1" cellpadding="0" class="form-info" style="width: 668px; height: 491px;">
+				    <tbody>
+				        <tr class="tr-info">
+				            <th class="td-info" colspan="2">男方信息</th>
+				            <td width="10" class="td-info" rowspan="15">&nbsp;</td>
+				            <th class="td-info" colspan="2">女方信息</th>
+				        </tr>
+				        <tr class="tr-info">
+				            <td width="100" class="td-info" style="text-align: right;">姓名</td>
+				            <td class="td-info">&nbsp;</td>
+				            <td width="100" class="td-info" style="text-align: right;">姓名</td>
+				            <td class="td-info">&nbsp;</td>
+				        </tr>
+				        <tr class="tr-info">
+				            <td width="100" class="td-info" style="text-align: right;">证件类型</td>
+				            <td class="td-info">&nbsp;</td>
+				            <td width="100" class="td-info" style="text-align: right;">证件类型</td>
+				            <td class="td-info">&nbsp;</td>
+				        </tr>
+				        <tr class="tr-info">
+				            <td width="100" class="td-info" style="text-align: right;">证件编号</td>
+				            <td class="td-info">&nbsp;</td>
+				            <td width="100" class="td-info" style="text-align: right;">证件编号</td>
+				            <td class="td-info">&nbsp;</td>
+				        </tr>
+				        <tr class="tr-info">
+				            <td width="100" class="td-info" style="text-align: right;">出生日期</td>
+				            <td class="td-info">&nbsp;</td>
+				            <td width="100" class="td-info" style="text-align: right;">出生日期</td>
+				            <td class="td-info">&nbsp;</td>
+				        </tr>
+				        <tr class="tr-info">
+				            <td width="100" class="td-info" style="text-align: right;">国籍</td>
+				            <td class="td-info">&nbsp;</td>
+				            <td width="100" class="td-info" style="text-align: right;">国籍</td>
+				            <td class="td-info">&nbsp;</td>
+				        </tr>
+				        <tr class="tr-info">
+				            <td width="100" class="td-info" style="text-align: right;">民族</td>
+				            <td class="td-info">&nbsp;</td>
+				            <td width="100" class="td-info" style="text-align: right;">民族</td>
+				            <td class="td-info">&nbsp;</td>
+				        </tr>
+				        <tr class="tr-info">
+				            <td width="100" class="td-info" style="text-align: right;">职业</td>
+				            <td class="td-info">&nbsp;</td>
+				            <td width="100" class="td-info" style="text-align: right;">职业</td>
+				            <td class="td-info">&nbsp;</td>
+				        </tr>
+				        <tr class="tr-info">
+				            <td width="100" class="td-info" style="text-align: right;">文化程度</td>
+				            <td class="td-info">&nbsp;</td>
+				            <td width="100" class="td-info" style="text-align: right;">文化程度</td>
+				            <td class="td-info">&nbsp;</td>
+				        </tr>
+				        <tr class="tr-info">
+				            <td width="100" class="td-info" style="text-align: right;">婚姻状况</td>
+				            <td class="td-info">&nbsp;</td>
+				            <td width="100" class="td-info" style="text-align: right;">婚姻状况</td>
+				            <td class="td-info">&nbsp;</td>
+				        </tr>
+				        <tr class="tr-info">
+				            <td width="100" class="td-info" style="text-align: right;">户籍地/省（市）</td>
+				            <td class="td-info">&nbsp;</td>
+				            <td width="100" class="td-info" style="text-align: right;">户籍地/省（市）</td>
+				            <td class="td-info">&nbsp;</td>
+				        </tr>
+				        <tr class="tr-info">
+				            <td width="100" class="td-info" style="text-align: right;">区（县）</td>
+				            <td class="td-info">&nbsp;</td>
+				            <td width="100" class="td-info" style="text-align: right;">区（县）</td>
+				            <td class="td-info">&nbsp;</td>
+				        </tr>
+				        <tr class="tr-info">
+				            <td width="100" class="td-info" style="text-align: right;">街道</td>
+				            <td class="td-info">&nbsp;</td>
+				            <td width="100" class="td-info" style="text-align: right;">街道</td>
+				            <td class="td-info">&nbsp;</td>
+				        </tr>
+				        <tr class="tr-info">
+				            <td width="100" class="td-info" style="text-align: right;">用户邮件</td>
+				            <td class="td-info">&nbsp;</td>
+				            <td width="100" class="td-info" style="text-align: right;">用户邮件</td>
+				            <td class="td-info">&nbsp;</td>
+				        </tr>
+				        <tr class="tr-info">
+				            <td width="100" class="td-info" style="text-align: right;">手机号码</td>
+				            <td class="td-info">&nbsp;</td>
+				            <td width="100" class="td-info" style="text-align: right;">手机号码</td>
+				            <td class="td-info">&nbsp;</td>
+				        </tr>
+				    </tbody>
+				</table>
+			]]>
+		</Html>
+	</Template>
+	<Template title="Order Form">
+		<Description>A template that defines  main table and belong table.</Description>
+		<Html>
+			<![CDATA[
+				<table width="600" height="400" cellspacing="1" cellpadding="0" class="form-info">
+				    <thead>
+				        <tr>
+				            <th height="100" class="td-info" scope="col" colspan="2">
+				            <p><span style="font-size: 24px;">********</span>采购单</p>
+				            <p>&nbsp;</p>
+				            </th>
+				        </tr>
+				    </thead>
+				    <tbody>
+				        <tr class="tr-info">
+				            <th width="100" class="td-info" scope="row">采购单编号</th>
+				            <td class="td-info"><input width="450" name="buyNo" xtype="textfield" isnew="true" class="x-form-text x-form-field" style="padding: 0pt; margin: 0pt; width: 450px;" txtlabel="编号" txtvaluetype="varchar" txtisnotnull="0" txtisprimary="0" /></td>
+				        </tr>
+				        <tr class="tr-info">
+				            <th width="100" class="td-info" scope="row">采购人</th>
+				            <td class="td-info"><input width="450" type="text" name="buyMan" isusersel="true" xtype="userselector" class="x-form-text x-form-field" style="padding: 0pt; margin: 0pt; width: 450px;" txtlabel="采购人" txtvaluetype="varchar" txtisnotnull="0" issingle="0" /></td>
+				        </tr>
+				        <tr class="tr-info">
+				            <th width="100" class="td-info" scope="row">采购部门</th>
+				            <td class="td-info"><input width="450" type="text" name="buyDep" isdepsel="true" xtype="depselector" class="x-form-text x-form-field" style="padding: 0pt; margin: 0pt; width: 450px;" txtlabel="采购部门" txtvaluetype="varchar" txtisnotnull="0" issingle="1" /></td>
+				        </tr>
+				        <tr class="tr-info">
+				            <th width="100" class="td-info" scope="row">采购时间</th>
+				            <td class="td-info"><input type="text" name="buyDate" __cfckdate="true" xtype="datefield" txtlabel="采购时间" txtistoday="0" dateformat="yyyy-MM-dd HH:mm:ss" txtvaluetype="datetime" txtisnotnull="0" /></td>
+				        </tr>
+				        <tr class="tr-info">
+				            <th width="100" class="td-info" scope="row">采购备注</th>
+				            <td class="td-info"><textarea name="buyNotes" width="450" height="250" isfck="true" xtype="fckeditor" style="width: 450px; height: 250px;" txtlabel="采购备注" class="x-form-textarea x-form-field x-column" txtvaluetype="varchar"></textarea></td>
+				        </tr>
+				        <tr class="tr-info">
+				            <th width="100" class="td-info" scope="row">采购明细</th>
+				            <td class="td-info">
+				            <table width="450" cellspacing="1" cellpadding="0" class="form-info" isgrid="true" isdetail="true">
+				                <thead>
+				                    <tr>
+				                        <th scope="col">明细名称</th>
+				                        <th scope="col">数量</th>
+				                        <th scope="col">单价</th>
+				                        <th scope="col">付款额</th>
+				                    </tr>
+				                </thead>
+				                <tbody>
+				                    <tr class="tr-info">
+				                        <td class="td-info"><input width="60" name="detailName" xtype="textfield" isnew="true" class="x-form-text x-form-field" style="padding: 0pt; margin: 0pt; width: 60px;" txtlabel="明细名称" txtvaluetype="varchar" txtisnotnull="0" txtisprimary="0" /></td>
+				                        <td class="td-info"><input width="60" name="buyTotal" xtype="numberfield" isnew="true" class="x-form-text x-form-field" style="padding: 0pt; margin: 0pt; width: 60px;" txtlabel="数量" txtvaluetype="int" txtisnotnull="0" txtisprimary="0" /></td>
+				                        <td class="td-info"><input width="60" name="price" xtype="numberfield" isnew="true" class="x-form-text x-form-field" style="padding: 0pt; margin: 0pt; width: 60px;" txtlabel="单价" txtvaluetype="decimal" txtisnotnull="0" txtisprimary="0" /></td>
+				                        <td class="td-info"><input width="60" name="totalPain" xtype="numberfield" isnew="true" class="x-form-text x-form-field" style="padding: 0pt; margin: 0pt; width: 60px;" txtlabel="付款额" txtvaluetype="decimal" txtisnotnull="0" txtisprimary="0" /></td>
+				                    </tr>
+				                </tbody>
+				            </table>
+				            </td>
+				        </tr>
+				    </tbody>
+				</table>
+			]]>
+		</Html>
+	</Template>
+	<Template title="Template 2">
+		<Description>A form with some text.</Description>
+		<Html>
+			<![CDATA[
+				<table cellspacing="1" cellpadding="0" class="form-info" style="width: 590px; height: 181px;">
+				    <tbody>
+				        <tr class="tr-info">
+				            <th width="100" height="100" class="td-info" colspan="2">发文模板</th>
+				        </tr>
+				        <tr class="tr-info">
+				            <th width="100" class="td-info">发文部门</th>
+				            <td class="td-info"><input width="450" type="text" name="archDep" isdepsel="true" xtype="depselector" class="x-form-text x-form-field" style="padding: 0pt; margin: 0pt; width: 450px;" txtlabel="发文部门" txtvaluetype="varchar" txtisnotnull="0" issingle="1" /></td>
+				        </tr>
+				        <tr class="tr-info">
+				            <th width="100" class="td-info">发文内容</th>
+				            <td class="td-info"><textarea name="archContent" width="450" height="250" isfck="true" xtype="fckeditor" style="width: 450px; height: 250px;" txtlabel="内容" class="x-form-textarea x-form-field x-column" txtvaluetype="text"></textarea></td>
+				        </tr>
+				        <tr class="tr-info">
+				            <th width="100" class="td-info">公文附件</th>
+				            <td class="td-info"><input width="450" type="text" name="archiveFiles" isfileattach="true" xtype="fileattach" txtvaluetype="varchar" class="x-form-text x-form-field" style="padding: 0pt; margin: 0pt; width: 450px;" txtlabel="附件" /></td>
+				        </tr>
+				    </tbody>
+				</table>
+			]]>
+		</Html>
+	</Template>
+</Templates>

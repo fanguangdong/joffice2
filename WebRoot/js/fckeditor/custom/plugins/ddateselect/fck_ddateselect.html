@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Hidden Field Properties</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="noindex, nofollow" name="robots" />
+	<script src="../../../editor/dialog/common/fck_dialog_common.js" type="text/javascript"></script>
+	<script type="text/javascript">
+
+var dialog	= window.parent ;
+var oEditor = dialog.InnerDialogLoaded() ;
+
+var FCK = oEditor.FCK ;
+
+// Gets the document DOM
+var oDOM = FCK.EditorDocument ;
+
+// Get the selected flash embed (if available).
+var oActiveEl = dialog.Selection.GetSelectedElement() ;
+
+window.onload = function()
+{
+	// First of all, translate the dialog box texts
+	oEditor.FCKLanguageManager.TranslatePage(document) ;
+
+	if ( oActiveEl )
+	{
+		GetE('txtName').value		= oActiveEl.name ;
+		GetE('txtlabel').value	= GetAttribute( oActiveEl, 'txtlabel' ) ;
+		GetE('txtistoday').checked		= GetAttribute( oActiveEl, 'txtistoday' )==1?true:false ;
+		GetE('txtvaluetype').value	= GetAttribute( oActiveEl, 'txtvaluetype' ) ;
+		GetE('dataformat').value= GetAttribute( oActiveEl, 'dataformat' ) ;
+		GetE('txtisnotnull').checked	= GetAttribute( oActiveEl, 'txtisnotnull' )==1?true:false ;
+	}
+  
+	dialog.SetOkButton( true ) ;
+	dialog.SetAutoSize( true ) ;
+	SelectField( 'txtName' ) ;
+}
+
+
+function Ok()
+{
+	if(GetE('txtName').value =='')
+	{
+		alert( "Name must have value." ) ;
+		GetE('txtName').focus() ;
+		return false ;
+	}
+	if(GetE('txtlabel').value =='')
+	{
+		alert( "LabelName must have value." ) ;
+		GetE('txtlabel').focus() ;
+		return false ;
+	}
+	oEditor.FCKUndo.SaveUndoStep() ;
+
+	oActiveEl = CreateNamedElement( oEditor, oActiveEl, 'INPUT',{
+		name: GetE('txtName').value,
+		__cfckdate:true,
+		xtype:'datefield'
+		} ) ;
+    SetAttribute( oActiveEl, 'type', 'text') ;
+    SetAttribute( oActiveEl, 'txtlabel'	, GetE('txtlabel').value ) ;
+	SetAttribute( oActiveEl, 'txtistoday', GetE('txtistoday').checked?'1':'0' ) ;
+	oActiveEl.style.width=100;
+	SetAttribute( oActiveEl, 'dataformat', GetE('dataformat').value) ;
+	SetAttribute( oActiveEl, 'txtvaluetype'		, GetE('txtvaluetype').value ) ;
+	SetAttribute( oActiveEl, 'txtisnotnull',GetE('txtisnotnull').checked?'1':'0');
+	
+	//SetAttribute( oActiveEl, 'style', 'background:url("../../../custom/plugins/ddateselect/date.png") no-repeat !important ;padding:2px 0px 2px 18px;', 0 ) ;
+
+	
+	oEditor.FCKUndo.SaveUndoStep() ;
+
+	return true ;
+}
+
+	</script>
+</head>
+<body style="overflow: hidden" scroll="no">
+	<table height="100%" width="100%">
+		<tr>
+			<td align="center">
+				<table border="0" class="inhoud" cellpadding="0" cellspacing="0" width="80%">
+					<tr>
+						<td>
+							<span fcklang="DlgTextName">Name</span><br />
+							<input type="text" size="20" id="txtName" size="20"/>
+						</td>
+						<td>
+							<span fcklang="DlgTextLabel">Label Name</span><br />
+							<input id="txtlabel" type="text" size="20" />
+						</td>
+					</tr>
+					<tr>
+					    <td>
+							<span fcklang="DlgTextType">DataType</span><br />
+							<select id="txtvaluetype">
+								<option value="date">date</option>
+								<option value="datetime">datetime</option>
+							</select>
+						</td>
+						<td>
+							<span fcklang="DlgTextFormat">Date Format</span><br />
+							<select id="dataformat">
+								<option value="yyyy-MM-dd">yyyy-MM-dd</option>
+								<option value="yyyy-MM-dd HH:mm:ss">yyyy-MM-dd HH:mm:ss</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+					   <td><input type="checkbox" id="txtisnotnull"><label for="txtisnotnull" fcklang="DlgTextIsNotNull">NOT NULL</label></td>
+					   <td><input type="checkbox" id="txtistoday"><label for="txtistoday"  fcklang="DlgTextIsToday">Is Today</label></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

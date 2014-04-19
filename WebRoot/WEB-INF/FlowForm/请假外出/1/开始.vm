@@ -1,0 +1,53 @@
+Ext.MyForm=Ext.extend(Ext.Panel ,{
+	title:"请假申请单",
+	labelAlign:"left",
+	layout:"form",
+	width:600,
+	height:350,
+	padding:"10px",
+	initComponent: function(){
+		this.items=[	{
+							name:'preHandler',
+							xtype:'hidden',
+							value:'errandsRegisterService.saveRegister'
+						},{
+							name : 'errandsRegister.dateId',
+							id : 'dateId',
+							xtype : 'hidden',
+							value : this.dateId == null ? '' : this.dateId
+						}, {
+							name : 'errandsRegister.flag',
+							xtype : 'hidden',
+							value:1
+						}, {
+							xtype:'hidden',
+							name : 'errandsRegister.approvalOption'
+						},  {
+							xtype:'hidden',
+							name : 'errandsRegister.approvalName'
+						}, {
+							fieldLabel : '描述',
+							xtype:'textarea',
+							anchor:'98%,98%',
+							height:230,
+							name : 'errandsRegister.descp',
+							allowBlank : false
+						}, {
+							fieldLabel : '开始时间',
+							name : 'errandsRegister.startTime',
+							xtype:'datetimefield',
+							width:220,
+							format:'Y-m-d H:i:s',
+							allowBlank : false
+						}, {
+							fieldLabel : '结束时间',
+							name : 'errandsRegister.endTime',
+							xtype:'datetimefield',
+							width:220,
+							format:'Y-m-d H:i:s',
+							allowBlank : false
+						}
+				];
+		Ext.MyForm.superclass.initComponent.call(this);
+	}
+})

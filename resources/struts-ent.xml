@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="ent" extends="struts-default" namespace="/ent">
+		
+<!-- start:  Generated for SalesOrder From Template: struts-ent.xml.vm  -->
+	<action name="*SalesOrder" class="SalesOrderAction" method="{1}">
+		<result>${successResultValue}</result>
+	</action>
+<!-- end:  Generated for SalesOrder From Template: struts-ent.xml.vm  -->
+<!-- start:  Generated for SalesDetail From Template: struts-ent.xml.vm  -->
+	<action name="*SalesDetail" class="SalesDetailAction" method="{1}">
+		<result>${successResultValue}</result>
+	</action>
+<!-- end:  Generated for SalesDetail From Template: struts-ent.xml.vm  -->
+<!-- start:  Generated for InfoType From Template: struts-ent.xml.vm  -->
+	<action name="*InfoType" class="InfoTypeAction" method="{1}">
+		<result>${successResultValue}</result>
+	</action>
+<!-- end:  Generated for InfoType From Template: struts-ent.xml.vm  -->
+<!-- start:  Generated for Information From Template: struts-ent.xml.vm  -->
+	<action name="*Information" class="InformationAction" method="{1}">
+		<result>${successResultValue}</result>
+	</action>
+<!-- end:  Generated for Information From Template: struts-ent.xml.vm  -->
+</package>
+</struts>

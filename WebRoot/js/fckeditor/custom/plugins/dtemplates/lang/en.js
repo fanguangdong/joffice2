@@ -1,0 +1,1 @@
+FCKLang.Template="Template";

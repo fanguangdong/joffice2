@@ -1,0 +1,558 @@
+[joffice] 2011-07-26 22:30:35 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-26 22:30:36 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-26 22:32:08 WARN  404_jsp        : Requested url not found: /joffice21/pages/demo/orleForm.jsp Referrer: null
+[joffice] 2011-07-26 22:43:37 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-26 22:43:40 INFO  BaseAction     : forward url:/pages/flow/processImage.jsp
+[joffice] 2011-07-26 22:51:38 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-26 22:52:18 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-26 22:57:24 INFO  ProcessActivityAction: start process..............
+[joffice] 2011-07-26 22:57:24 DEBUG JbpmServiceImpl: ===>assignId:生产主任核对|1
+[joffice] 2011-07-26 22:57:31 WARN  500_jsp        : Error Occur, url: /joffice21/pages/demo/roleForm.jsp Referrer: http://localhost:8080/joffice21/
+[joffice] 2011-07-26 22:57:31 ERROR 500_jsp        : Error processing url: [/joffice21/pages/demo/roleForm.jsp], Referrer: [http://localhost:8080/joffice21/], Error message: .
+Exception stack trace: 
+
+org.apache.jasper.JasperException: An exception occurred processing JSP page /pages/demo/roleForm.jsp at line 18
+
+15: 			String roleId=request.getParameter("roleId");
+16: 			//若原来已经存在，则加载
+17: 			if(StringUtils.isNotEmpty(roleId)){
+18: 				appRole=appRoleService.get(new Long(roleId));
+19: 			}
+20: 			
+21: 			if("POST".equals(request.getMethod())){//保存提交值
+
+
+Stacktrace:
+	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:505)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:416)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:342)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.orm.hibernate3.support.OpenSessionInViewFilter.doFilterInternal(OpenSessionInViewFilter.java:198)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:849)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:454)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: java.lang.NumberFormatException: For input string: "${roleId}"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Long.parseLong(Long.java:403)
+	at java.lang.Long.<init>(Long.java:671)
+	at org.apache.jsp.pages.demo.roleForm_jsp._jspService(roleForm_jsp.java:81)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:374)
+	... 19 more
+
+[joffice] 2011-07-26 22:59:12 INFO  ProcessActivityAction: start process..............
+[joffice] 2011-07-26 22:59:12 DEBUG JbpmServiceImpl: ===>assignId:生产主任核对|1
+[joffice] 2011-07-26 23:01:12 INFO  ProcessActivityAction: start process..............
+[joffice] 2011-07-26 23:01:12 DEBUG JbpmServiceImpl: ===>assignId:生产主任核对|1
+[joffice] 2011-07-26 23:01:42 INFO  ProcessActivityAction: start process..............
+[joffice] 2011-07-26 23:01:42 DEBUG JbpmServiceImpl: ===>assignId:生产主任核对|1
+[joffice] 2011-07-26 23:02:27 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-27 12:37:16 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-27 12:37:18 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-27 12:37:59 WARN  PhaseInterceptorChain: Interceptor for {http://impl.cxf.service.oa.htsoft.com/}RegServiceImplService has thrown exception, unwinding now
+org.apache.cxf.interceptor.Fault: No such operation:  (HTTP GET PATH_INFO: /joffice21/regService)
+	at org.apache.cxf.interceptor.URIMappingInterceptor.handleMessage(URIMappingInterceptor.java:83)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:244)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:110)
+	at org.apache.cxf.transport.servlet.ServletDestination.invoke(ServletDestination.java:98)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:423)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:178)
+	at org.apache.cxf.transport.servlet.AbstractCXFServlet.invoke(AbstractCXFServlet.java:142)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:179)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:108)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:159)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.orm.hibernate3.support.OpenSessionInViewFilter.doFilterInternal(OpenSessionInViewFilter.java:198)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:849)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:454)
+	at java.lang.Thread.run(Thread.java:619)
+[joffice] 2011-07-27 14:18:24 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[]}]
+[joffice] 2011-07-27 14:18:33 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[]}]
+[joffice] 2011-07-27 14:18:33 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[]}]
+[joffice] 2011-07-27 14:19:02 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10020',text:'行政',leaf:true,expanded:true}]}]
+[joffice] 2011-07-27 14:19:27 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10021',text:'经济',leaf:true,expanded:true},{id:'10020',text:'行政',leaf:true,expanded:true}]}]
+[joffice] 2011-07-27 14:19:32 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10021',text:'经济',leaf:true,expanded:true},{id:'10020',text:'行政',leaf:true,expanded:true}]}]
+[joffice] 2011-07-27 14:20:13 DEBUG DateConverter  : converFromString....
+[joffice] 2011-07-27 14:20:13 DEBUG DateConverter  : convert from  :2011-07-27
+[joffice] 2011-07-27 14:20:28 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10021',text:'经济',leaf:true,expanded:true},{id:'10020',text:'行政',leaf:true,expanded:true}]}]
+[joffice] 2011-07-27 14:21:21 DEBUG DateConverter  : converFromString....
+[joffice] 2011-07-27 14:21:21 DEBUG DateConverter  : convert from  :2011-07-27
+[joffice] 2011-07-27 14:21:40 WARN  404_jsp        : Requested url not found: /joffice21/regService Referrer: null
+[joffice] 2011-07-27 14:25:01 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-27 14:25:03 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-27 14:25:15 WARN  ServletController: Can't find the request for http://localhost:8080/joffice21/ws/regService's Observer 
+[joffice] 2011-07-27 14:25:51 WARN  ServletController: Can't find the request for http://localhost:8080/joffice21/ws/regService's Observer 
+[joffice] 2011-07-27 14:26:02 WARN  ServletController: Can't find the request for http://localhost:8080/joffice21/ws/regService's Observer 
+[joffice] 2011-07-27 14:26:31 WARN  ServletController: Can't find the request for http://localhost:8080/joffice21/ws/regService's Observer 
+[joffice] 2011-07-27 14:27:05 WARN  PhaseInterceptorChain: Interceptor for {http://impl.cxf.service.oa.htsoft.com/}RegServiceImplService has thrown exception, unwinding now
+org.apache.cxf.interceptor.Fault: No such operation:  (HTTP GET PATH_INFO: /joffice21/ws/regService)
+	at org.apache.cxf.interceptor.URIMappingInterceptor.handleMessage(URIMappingInterceptor.java:83)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:244)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:110)
+	at org.apache.cxf.transport.servlet.ServletDestination.invoke(ServletDestination.java:98)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:423)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:178)
+	at org.apache.cxf.transport.servlet.AbstractCXFServlet.invoke(AbstractCXFServlet.java:142)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:179)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:108)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:159)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.orm.hibernate3.support.OpenSessionInViewFilter.doFilterInternal(OpenSessionInViewFilter.java:198)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:849)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:454)
+	at java.lang.Thread.run(Thread.java:619)
+[joffice] 2011-07-27 14:28:23 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-27 14:28:25 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-27 14:28:26 WARN  PhaseInterceptorChain: Interceptor for {http://impl.cxf.service.oa.htsoft.com/}RegServiceImplService has thrown exception, unwinding now
+org.apache.cxf.interceptor.Fault: No such operation:  (HTTP GET PATH_INFO: /joffice21/regService)
+	at org.apache.cxf.interceptor.URIMappingInterceptor.handleMessage(URIMappingInterceptor.java:83)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:244)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:110)
+	at org.apache.cxf.transport.servlet.ServletDestination.invoke(ServletDestination.java:98)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:423)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:178)
+	at org.apache.cxf.transport.servlet.AbstractCXFServlet.invoke(AbstractCXFServlet.java:142)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:179)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:108)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:159)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.orm.hibernate3.support.OpenSessionInViewFilter.doFilterInternal(OpenSessionInViewFilter.java:198)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:849)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:454)
+	at java.lang.Thread.run(Thread.java:619)
+[joffice] 2011-07-27 16:40:36 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-27 16:40:38 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-27 16:43:42 WARN  PhaseInterceptorChain: Interceptor for {http://impl.cxf.service.oa.htsoft.com/}RegServiceImplService has thrown exception, unwinding now
+org.apache.cxf.interceptor.Fault: No such operation:  (HTTP GET PATH_INFO: /joffice21/regService)
+	at org.apache.cxf.interceptor.URIMappingInterceptor.handleMessage(URIMappingInterceptor.java:83)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:244)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:110)
+	at org.apache.cxf.transport.servlet.ServletDestination.invoke(ServletDestination.java:98)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:423)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:178)
+	at org.apache.cxf.transport.servlet.AbstractCXFServlet.invoke(AbstractCXFServlet.java:142)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:179)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:108)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:159)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.orm.hibernate3.support.OpenSessionInViewFilter.doFilterInternal(OpenSessionInViewFilter.java:198)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:849)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:454)
+	at java.lang.Thread.run(Thread.java:619)
+[joffice] 2011-07-28 08:53:22 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 08:53:23 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 08:56:14 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 08:56:16 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 08:59:02 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[]}]
+[joffice] 2011-07-28 08:59:40 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[]}]
+[joffice] 2011-07-28 09:02:28 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[]}]
+[joffice] 2011-07-28 09:02:34 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[]}]
+[joffice] 2011-07-28 09:08:06 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[]}]
+[joffice] 2011-07-28 09:48:08 WARN  500_jsp        : Error Occur, url: /joffice21/flow/transProcessActivity.do Referrer: http://localhost:8080/joffice21/
+[joffice] 2011-07-28 09:48:08 ERROR 500_jsp        : Error processing url: [/joffice21/flow/transProcessActivity.do], Referrer: [http://localhost:8080/joffice21/], Error message: .
+Exception stack trace: 
+
+javax.servlet.ServletException: org.jbpm.api.JbpmException: deployment 1 doesn't contain object PROV9
+	at org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:515)
+	at org.apache.struts2.dispatcher.FilterDispatcher.doFilter(FilterDispatcher.java:422)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:378)
+	at com.htsoft.core.web.filter.SecurityInterceptorFilter.doFilterInternal(SecurityInterceptorFilter.java:76)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:390)
+	at org.springframework.security.intercept.web.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:109)
+	at org.springframework.security.intercept.web.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:83)
+	at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:390)
+	at org.springframework.security.ui.SessionFixationProtectionFilter.doFilterHttp(SessionFixationProtectionFilter.java:67)
+	at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+	at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:390)
+	at org.springframework.security.ui.ExceptionTranslationFilter.doFilterHttp(ExceptionTranslationFilter.java:101)
+	at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+	at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:390)
+	at org.springframework.security.providers.anonymous.AnonymousProcessingFilter.doFilterHttp(AnonymousProcessingFilter.java:105)
+	at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+	at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:390)
+	at org.springframework.security.ui.rememberme.RememberMeProcessingFilter.doFilterHttp(RememberMeProcessingFilter.java:116)
+	at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+	at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:390)
+	at org.springframework.security.wrapper.SecurityContextHolderAwareRequestFilter.doFilterHttp(SecurityContextHolderAwareRequestFilter.java:91)
+	at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+	at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:390)
+	at org.springframework.security.ui.basicauth.BasicProcessingFilter.doFilterHttp(BasicProcessingFilter.java:174)
+	at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+	at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:390)
+	at org.springframework.security.ui.AbstractProcessingFilter.doFilterHttp(AbstractProcessingFilter.java:277)
+	at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+	at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:390)
+	at org.springframework.security.ui.logout.LogoutFilter.doFilterHttp(LogoutFilter.java:89)
+	at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+	at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:390)
+	at org.springframework.security.context.HttpSessionContextIntegrationFilter.doFilterHttp(HttpSessionContextIntegrationFilter.java:235)
+	at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+	at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:390)
+	at org.springframework.security.util.FilterChainProxy.doFilter(FilterChainProxy.java:175)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:236)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:167)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.springframework.orm.hibernate3.support.OpenSessionInViewFilter.doFilterInternal(OpenSessionInViewFilter.java:198)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at com.htsoft.core.web.filter.ResponseHeaderFilter.doFilter(ResponseHeaderFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:128)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:849)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:583)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:454)
+	at java.lang.Thread.run(Thread.java:619)
+Caused by: org.jbpm.api.JbpmException: deployment 1 doesn't contain object PROV9
+	at org.jbpm.pvm.internal.repository.RepositorySessionImpl.getObject(RepositorySessionImpl.java:133)
+	at org.jbpm.pvm.internal.repository.RepositorySessionImpl.findProcessDefinitionById(RepositorySessionImpl.java:176)
+	at org.jbpm.pvm.internal.model.ExecutionImpl.getProcessDefinition(ExecutionImpl.java:1184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer.invoke(JavassistLazyInitializer.java:197)
+	at org.jbpm.pvm.internal.model.ExecutionImpl_$$_javassist_49.getProcessDefinition(ExecutionImpl_$$_javassist_49.java)
+	at com.htsoft.oa.service.flow.impl.JbpmServiceImpl.getTransitionsByTaskId(JbpmServiceImpl.java:1186)
+	at com.htsoft.oa.service.flow.impl.JbpmServiceImpl.getTransitionsByTaskId(JbpmServiceImpl.java:1146)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:307)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:182)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:149)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:106)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:171)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:89)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:171)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:204)
+	at $Proxy8.getTransitionsByTaskId(Unknown Source)
+	at com.htsoft.oa.action.flow.ProcessActivityAction.trans(ProcessActivityAction.java:679)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invokeAction(DefaultActionInvocation.java:404)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invokeActionOnly(DefaultActionInvocation.java:267)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:229)
+	at com.opensymphony.xwork2.interceptor.DefaultWorkflowInterceptor.doIntercept(DefaultWorkflowInterceptor.java:221)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:86)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at com.opensymphony.xwork2.validator.ValidationInterceptor.doIntercept(ValidationInterceptor.java:150)
+	at org.apache.struts2.interceptor.validation.AnnotationValidationInterceptor.doIntercept(AnnotationValidationInterceptor.java:48)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:86)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at com.opensymphony.xwork2.interceptor.ConversionErrorInterceptor.intercept(ConversionErrorInterceptor.java:123)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:184)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:86)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at com.opensymphony.xwork2.interceptor.StaticParametersInterceptor.intercept(StaticParametersInterceptor.java:105)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at org.apache.struts2.interceptor.CheckboxInterceptor.intercept(CheckboxInterceptor.java:83)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at org.apache.struts2.interceptor.FileUploadInterceptor.intercept(FileUploadInterceptor.java:207)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at com.opensymphony.xwork2.interceptor.ModelDrivenInterceptor.intercept(ModelDrivenInterceptor.java:74)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at com.opensymphony.xwork2.interceptor.ScopedModelDrivenInterceptor.intercept(ScopedModelDrivenInterceptor.java:127)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at org.apache.struts2.interceptor.ProfilingActivationInterceptor.intercept(ProfilingActivationInterceptor.java:107)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at org.apache.struts2.interceptor.debugging.DebuggingInterceptor.intercept(DebuggingInterceptor.java:206)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at com.opensymphony.xwork2.interceptor.ChainingInterceptor.intercept(ChainingInterceptor.java:115)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at com.opensymphony.xwork2.interceptor.I18nInterceptor.intercept(I18nInterceptor.java:143)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at com.opensymphony.xwork2.interceptor.PrepareInterceptor.doIntercept(PrepareInterceptor.java:121)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:86)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at org.apache.struts2.interceptor.ServletConfigInterceptor.intercept(ServletConfigInterceptor.java:170)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at com.opensymphony.xwork2.interceptor.AliasInterceptor.intercept(AliasInterceptor.java:123)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at com.opensymphony.xwork2.interceptor.ExceptionMappingInterceptor.intercept(ExceptionMappingInterceptor.java:176)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:224)
+	at com.opensymphony.xwork2.DefaultActionInvocation$2.doProfiling(DefaultActionInvocation.java:223)
+	at com.opensymphony.xwork2.util.profiling.UtilTimerStack.profile(UtilTimerStack.java:455)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:221)
+	at org.apache.struts2.impl.StrutsActionProxy.execute(StrutsActionProxy.java:50)
+	at org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:504)
+	... 59 more
+
+[joffice] 2011-07-28 09:50:08 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 11:19:19 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 11:20:23 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 11:23:04 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 11:23:04 DEBUG DateConverter  : conver 2011-07-19 to date object
+[joffice] 2011-07-28 11:23:05 DEBUG JbpmServiceImpl: ===>assignId:总裁办|1
+[joffice] 2011-07-28 11:23:05 DEBUG JbpmServiceImpl: cur task:===总裁办
+[joffice] 2011-07-28 11:30:30 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 11:30:33 INFO  BaseAction     : forward url:/pages/flow/processImage.jsp
+[joffice] 2011-07-28 11:30:39 INFO  BaseAction     : forward url:/pages/flow/processImage.jsp
+[joffice] 2011-07-28 11:30:49 ERROR FileUtil       : D:\dev\product\joffice-gov-2.1\web\WEB-INF\FlowForm\日常审批流程\1\开始.vm (系统找不到指定的路径。)
+[joffice] 2011-07-28 11:30:52 ERROR FileUtil       : D:\dev\product\joffice-gov-2.1\web\WEB-INF\FlowForm\日常审批流程\1\生产主任核对.vm (系统找不到指定的路径。)
+[joffice] 2011-07-28 11:42:58 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 11:53:48 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 14:39:08 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 14:39:09 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 14:57:40 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 14:57:42 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 15:04:09 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 15:04:18 DEBUG DateConverter  : conver 2011-07-19 to date object
+[joffice] 2011-07-28 15:04:18 DEBUG JbpmServiceImpl: 准备从任务总裁办========回退
+[joffice] 2011-07-28 15:04:19 DEBUG JbpmServiceImpl: 成功产生回退任务至＝＝＝＝＝＝＝＝＝＝董事长
+[joffice] 2011-07-28 15:04:19 DEBUG JbpmServiceImpl: cur task:===董事长
+[joffice] 2011-07-28 15:16:36 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 15:16:38 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 15:17:15 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 15:17:55 INFO  ProcessActivityAction: start process..............
+[joffice] 2011-07-28 15:17:55 DEBUG DateConverter  : conver 2011-07-28 to date object
+[joffice] 2011-07-28 15:17:56 DEBUG JbpmServiceImpl: ===>assignId:生产主任核对|1
+[joffice] 2011-07-28 15:20:01 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 15:20:01 DEBUG DateConverter  : conver 2011-07-28 to date object
+[joffice] 2011-07-28 15:20:02 DEBUG JbpmServiceImpl: ===>assignId:经理审批|1
+[joffice] 2011-07-28 15:20:02 ERROR ProcessActivityAction: error:a different object with the same identifier value was already associated with the session: [org.jbpm.pvm.internal.history.model.HistoryTaskImpl#80014]
+[joffice] 2011-07-28 15:22:36 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 15:22:38 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 15:22:56 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 15:23:14 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 15:23:14 DEBUG DateConverter  : conver 2011-07-28 to date object
+[joffice] 2011-07-28 15:23:14 DEBUG JbpmServiceImpl: ===>assignId:经理审批|1
+[joffice] 2011-07-28 15:23:14 ERROR ProcessActivityAction: error:a different object with the same identifier value was already associated with the session: [org.jbpm.pvm.internal.history.model.HistoryTaskImpl#90003]
+[joffice] 2011-07-28 15:31:28 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 15:31:29 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 15:32:02 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 15:32:02 DEBUG DateConverter  : conver 2011-07-28 to date object
+[joffice] 2011-07-28 15:32:03 DEBUG JbpmServiceImpl: ===>assignId:经理审批|1
+[joffice] 2011-07-28 15:32:03 ERROR ProcessActivityAction: error:PreparedStatementCallback; bad SQL grammar [update JBPM4_TASK set DUEDATE_=? where DBID=?]; nested exception is java.sql.SQLException: ORA-00904: "DBID": 标识符无效
+
+[joffice] 2011-07-28 15:33:19 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 15:33:21 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 15:33:53 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 15:33:53 DEBUG DateConverter  : conver 2011-07-28 to date object
+[joffice] 2011-07-28 15:33:54 DEBUG JbpmServiceImpl: ===>assignId:经理审批|1
+[joffice] 2011-07-28 15:33:54 DEBUG JbpmServiceImpl: cur task:===经理审批
+[joffice] 2011-07-28 15:35:24 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 15:35:24 DEBUG DateConverter  : conver 2011-07-28 to date object
+[joffice] 2011-07-28 15:35:24 DEBUG JbpmServiceImpl: ===>assignId:财务审批|1
+[joffice] 2011-07-28 15:37:04 DEBUG JbpmServiceImpl: cur task:===财务审批
+[joffice] 2011-07-28 15:38:37 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 15:38:37 DEBUG DateConverter  : conver 2011-07-28 to date object
+[joffice] 2011-07-28 15:38:37 DEBUG JbpmServiceImpl: 准备从任务财务审批========回退
+[joffice] 2011-07-28 15:38:37 DEBUG JbpmServiceImpl: 成功产生回退任务至＝＝＝＝＝＝＝＝＝＝经理审批
+[joffice] 2011-07-28 15:38:37 DEBUG JbpmServiceImpl: cur task:===经理审批
+[joffice] 2011-07-28 15:43:54 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 15:43:55 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 15:44:39 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 15:44:39 DEBUG DateConverter  : conver 2011-07-28 to date object
+[joffice] 2011-07-28 15:44:40 DEBUG JbpmServiceImpl: ===>assignId:财务审批|1
+[joffice] 2011-07-28 15:44:40 DEBUG JbpmServiceImpl: cur task:===财务审批
+[joffice] 2011-07-28 15:47:22 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 15:47:25 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 15:49:57 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 15:49:57 DEBUG DateConverter  : conver 2011-07-28 to date object
+[joffice] 2011-07-28 15:49:57 DEBUG JbpmServiceImpl: 准备从任务财务审批========回退
+[joffice] 2011-07-28 15:49:58 DEBUG JbpmServiceImpl: 成功产生回退任务至＝＝＝＝＝＝＝＝＝＝经理审批
+[joffice] 2011-07-28 15:49:58 DEBUG JbpmServiceImpl: cur task:===经理审批
+[joffice] 2011-07-28 15:50:29 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 15:50:29 ERROR ProcessActivityAction: error:null
+[joffice] 2011-07-28 15:51:05 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 15:51:05 ERROR ProcessActivityAction: error:null
+[joffice] 2011-07-28 15:52:57 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 15:53:01 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 15:53:12 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 15:53:28 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 15:53:29 DEBUG JbpmServiceImpl: ===>assignId:1
+[joffice] 2011-07-28 15:53:40 DEBUG JbpmServiceImpl: cur task:===生产主任核对
+[joffice] 2011-07-28 15:54:35 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 15:54:35 DEBUG DateConverter  : conver 2011-07-28 to date object
+[joffice] 2011-07-28 15:54:36 DEBUG JbpmServiceImpl: ===>assignId:经理审批|1
+[joffice] 2011-07-28 15:56:20 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 15:56:22 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 15:56:37 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 15:56:58 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 15:56:58 DEBUG DateConverter  : conver 2011-07-28 to date object
+[joffice] 2011-07-28 15:56:59 DEBUG JbpmServiceImpl: ===>assignId:经理审批|1
+[joffice] 2011-07-28 15:57:32 DEBUG JbpmServiceImpl: cur task:===经理审批
+[joffice] 2011-07-28 16:04:01 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\product\joffice-gov-2.1\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 16:04:03 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 16:04:26 INFO  ProcessActivityAction: process jump to next ..............
+[joffice] 2011-07-28 16:04:26 DEBUG DateConverter  : conver 2011-07-28 to date object
+[joffice] 2011-07-28 16:04:27 DEBUG JbpmServiceImpl: ===>assignId:财务审批|1
+[joffice] 2011-07-28 16:04:29 DEBUG JbpmServiceImpl: cur task:===财务审批
+[joffice] 2011-07-28 16:04:48 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'key',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 17:17:42 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\train\joffice21-dev\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 17:17:43 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 17:18:26 DEBUG GenericDaoImpl : 我的下属查询：select u.jobUser from RelativeUser u where u.appUser.userId = ? and u.isSuper = ? 
+[joffice] 2011-07-28 17:36:21 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[]}]
+[joffice] 2011-07-28 17:36:40 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'行政',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 17:42:41 DEBUG MenuUtil       : name:oa file=menu-oa.xml
+[joffice] 2011-07-28 17:42:41 INFO  MenuUtil       : load the menu config:D:\dev\train\joffice21-dev\web\/js/menu/xml//menu-oa.xml
+[joffice] 2011-07-28 17:42:41 DEBUG MenuUtil       : name:myflow file=menu-myflow.xml
+[joffice] 2011-07-28 17:42:41 INFO  MenuUtil       : load the menu config:D:\dev\train\joffice21-dev\web\/js/menu/xml//menu-myflow.xml
+[joffice] 2011-07-28 17:42:41 DEBUG MenuUtil       : name:arch file=menu-arch.xml
+[joffice] 2011-07-28 17:42:41 INFO  MenuUtil       : load the menu config:D:\dev\train\joffice21-dev\web\/js/menu/xml//menu-arch.xml
+[joffice] 2011-07-28 17:42:41 DEBUG MenuUtil       : name:archives file=menu-archives.xml
+[joffice] 2011-07-28 17:42:41 INFO  MenuUtil       : load the menu config:D:\dev\train\joffice21-dev\web\/js/menu/xml//menu-archives.xml
+[joffice] 2011-07-28 17:42:41 DEBUG MenuUtil       : name:hr file=menu-hr.xml
+[joffice] 2011-07-28 17:42:41 INFO  MenuUtil       : load the menu config:D:\dev\train\joffice21-dev\web\/js/menu/xml//menu-hr.xml
+[joffice] 2011-07-28 17:42:41 DEBUG MenuUtil       : name:setting file=menu-setting.xml
+[joffice] 2011-07-28 17:42:41 INFO  MenuUtil       : load the menu config:D:\dev\train\joffice21-dev\web\/js/menu/xml//menu-setting.xml
+[joffice] 2011-07-28 17:42:43 DEBUG GenericDaoImpl : 我的下属查询：select u.jobUser from RelativeUser u where u.appUser.userId = ? and u.isSuper = ? 
+[joffice] 2011-07-28 17:45:09 INFO  ProDefinitionAction: ...eneter defSave......
+[joffice] 2011-07-28 17:45:09 DEBUG ProDefinitionAction: 解析的JBPM对应的xml文件：
+<?xml version="1.0" encoding="UTF-8"?> 
+ <process name="feeApplyFlow" xmlns="http://jbpm.org/4.4/jpdl"><start name="开始" g="170,314,48,48">
+	<transition g="292,345;292,195:-50,-22" name="to 任务1" to="经理审批" />
+	<transition g="292,345;292,495:-50,-22" name="to 任务2" to="副经理审批" />
+</start>
+<task name="经理审批" g="379,170,90,50" >
+	<transition g="605,195:-50,-22" name="to 任务3" to="董事议审" />
+</task>
+<task name="副经理审批" g="379,470,90,50" >
+	<transition g="605,495:-50,-22" name="to 任务3" to="董事议审" />
+</task>
+<task name="董事议审" g="560,313,90,50" >
+	<transition g="-50,-22" name="to 结束1" to="结束1" />
+</task>
+<end name="结束1" g="830,318,48,48" />
+</process>
+[joffice] 2011-07-28 17:45:09 DEBUG ProDefinitionAction: ---deploy---true
+[joffice] 2011-07-28 17:45:09 DEBUG ProDefinitionAction: ---start deploy---
+[joffice] 2011-07-28 17:45:09 DEBUG JbpmServiceImpl: deploy jbpm jpdl now===========
+[joffice] 2011-07-28 17:45:17 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'行政',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 17:45:21 INFO  BaseAction     : forward url:/pages/flow/processImage.jsp
+[joffice] 2011-07-28 17:46:37 INFO  BaseAction     : forward url:/pages/flow/processImage.jsp
+[joffice] 2011-07-28 21:53:02 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\train\joffice21-dev\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 21:53:03 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 21:57:39 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'行政',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 21:59:31 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[]}]
+[joffice] 2011-07-28 21:59:37 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[]}]
+[joffice] 2011-07-28 22:17:06 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'行政',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 22:44:45 DEBUG FlowVelocityEngine: create flowVelocityEngine... and the path is D:\dev\train\joffice21-dev\web\WEB-INF/FlowForm/
+[joffice] 2011-07-28 22:44:46 INFO  FlexFactoryImpl: Create FactoryInstance.
+[joffice] 2011-07-28 22:45:23 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'行政',leaf:true,expanded:true}]}]
+[joffice] 2011-07-28 22:54:51 INFO  GlobalTypeAction: tree json:[{id:'0',text:'总分类',expanded:true,children:[{id:'10000',text:'行政',leaf:true,expanded:true}]}]

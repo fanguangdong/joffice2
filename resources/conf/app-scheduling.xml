@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="true">
+	<bean id="scheduler"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
+		lazy-init="false">
+		<property name="triggers">
+			<list>
+				<!--
+				<ref local="sendMessageTrigger"/>
+				<ref local="smsMobileTrigger"/>
+				-->
+			</list>
+		</property>
+	</bean>
+
+	<!-- Detial -->
+    <bean id="sendMessageDetial" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="officeGoodsService"></property>
+        <property name="targetMethod" value="sendWarmMessage"></property>
+        <property name="concurrent" value="false"></property>
+    </bean>
+	<!-- Trigger -->
+	<bean id="sendMessageTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<!-- 早上二点钟开始调用SENDWARMMESSAGE方法-->
+		<property name="cronExpression">
+		    <value>0 0 2 * * ?</value>
+		</property> 
+	   <property name="jobDetail" ref="sendMessageDetial"/>
+	</bean>
+	
+	<!-- Detial -->
+    <bean id="smsMobileDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="smsMobileService"></property>
+        <property name="targetMethod" value="sendSms"></property>
+        <property name="concurrent" value="false"></property>
+    </bean>
+	<!-- Trigger -->
+	<bean id="smsMobileTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<!-- 每两分钟检查要发送的短信-->
+		<property name="cronExpression">
+		    <value>0 0/2 * * * ?</value>
+		</property> 
+	   <property name="jobDetail" ref="smsMobileDetail"/>
+	</bean>
+	
+	<!-- 工作计划Detial -->
+    <bean id="workPlanDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="workPlanService"></property>
+        <property name="targetMethod" value="sendWorkPlanTime"></property>
+        <property name="concurrent" value="false"></property>
+    </bean>
+	<!-- Trigger -->
+	<bean id="workPlanTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<!-- 每两分钟检查要发送的短信-->
+		<property name="cronExpression">
+		    <value>0 0/2 * * * ?</value>
+		</property> 
+	   <property name="jobDetail" ref="workPlanDetail"/>
+	</bean>
+</beans>

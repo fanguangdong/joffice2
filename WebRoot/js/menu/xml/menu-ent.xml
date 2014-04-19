@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Menus id="Mod_ent" text="企业管理" iconCls="mod-ent">
+	<Items id="Ent" text="企业管理" iconCls="menu-ent">
+<!-- start:  Generated for SalesOrder From Template: menu-ent.xml.vm  -->
+<Item id="SalesOrderView" text="SalesOrder">
+	<Function id="_SalesOrderList" text="订单查询"/>
+	<Function id="_SalesOrderAdd" text="订单添加">
+		<url>/ent/saveSalesOrder.do</url>
+		<url>/ent/getSalesOrder.do</url>
+		<url>/ent/listSalesDetail.do</url>
+	</Function>
+	<Function id="_SalesOrderDel" text="订单删除"/>
+</Item> 
+<!-- end:  Generated for SalesOrder From Template: menu-ent.xml.vm  -->
+<!-- start:  Generated for SalesDetail From Template: menu-ent.xml.vm  -->
+<Item id="SalesDetailView" text="SalesDetail"/> 
+<!-- end:  Generated for SalesDetail From Template: menu-ent.xml.vm  -->
+<!-- start:  Generated for InfoType From Template: menu-ent.xml.vm  -->
+<Item id="InfoTypeView" text="InfoType"/> 
+<!-- end:  Generated for InfoType From Template: menu-ent.xml.vm  -->
+<!-- start:  Generated for Information From Template: menu-ent.xml.vm  -->
+<Item id="InformationView" text="Information"/> 
+<!-- end:  Generated for Information From Template: menu-ent.xml.vm  -->
+<!-- start:  Generated for ProcessModule From Template: menu-ent.xml.vm  -->
+<Item id="ProcessModuleView" text="ProcessModule"/> 
+<!-- end:  Generated for ProcessModule From Template: menu-ent.xml.vm  -->
+</Items>
+</Menus>

@@ -1,0 +1,92 @@
+FlowPanel=Ext.extend(Ext.form.FormPanel,{
+	constructor:function(cfg){
+	    
+	    this.contentPanel=new Ext.Panel({
+			border:false,
+			bodyStyle:'padding:5px',
+			height:260,
+			autoScroll:true,
+			autoLoad:{
+				url:__ctxPath+ '/pages/archive/archiveIssueDetail.jsp?archivesId='+ ${archivesId}
+			}
+		});
+		FlowPanel.superclass.constructor.call(this,{
+			bodyStyle:'padding:5px',
+			title:'${activityName}',
+			height:400,
+			width:800,
+			layout:'form',
+			items:[
+						this.contentPanel,
+						{
+							name : 'preHandler',
+							value : 'archivesService.saveStatus',
+							xtype : 'hidden'
+						},{
+							name : 'afterHandler',
+							value : 'archivesService.saveDispatch',
+							xtype : 'hidden'
+						},{
+							name : 'archivesId',
+							xtype : 'hidden',
+							value : '${archivesId}'
+						},{
+							//[arch_dispatch]表类型
+							name : 'archUserType',
+							value : '1',//代表存储分发意见,
+							xtype : 'hidden'
+						},{
+						//部门签收的ID,假如收文是由发文传下来,反馈意见时需要用到
+							name : 'archDepId',
+							value : '${archDepId}',
+							xtype : 'hidden'
+						},{
+					name:'flowAssignId',
+					#if ($flowAssignId)
+					value:'${flowAssignId}',
+					#end
+					xtype:'hidden'
+				},
+				{
+					xtype:'compositefield',
+					//height:32,
+					bodyStyle:'padding:5px',
+					fieldLabel:'科室收文承办人',
+					items:[
+						{
+							xtype:'textarea',
+							width:320,
+							readOnly:true,
+							allowBlank:false,
+							#if ($archives_handlerUnames)
+							value:'${archives_handlerUnames}',
+							#end
+							name:'fengfa_deps'
+						},
+						{
+							xtype:'button',
+							text:'选择',
+							iconCls:'btn-mail_recipient',
+							scope:this,
+							handler:function(){
+								var ct=this;
+								UserSelector.getView(function(id, name) {
+											ct.getCmpByName('fengfa_deps').setValue(name);
+											ct.getCmpByName('flowAssignId').setValue(id);
+										}).show();
+							}
+						}
+					]
+				}
+			]
+		});
+	},
+	afterLoad : function(processNextForm){
+		processNextForm.jumpPanel.hide();
+		processNextForm.jumpPanel.doLayout();
+	}
+	,
+	getFlowAssignId:function(processNextForm){
+		return this.getCmpByName('flowAssignId').getValue();
+	}
+})

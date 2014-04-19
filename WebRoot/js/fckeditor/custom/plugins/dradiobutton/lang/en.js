@@ -1,0 +1,1 @@
+FCKLang.DlgTextLabel="Label Name";

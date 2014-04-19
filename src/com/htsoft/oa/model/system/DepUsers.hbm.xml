@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping> 
+  <class name="com.htsoft.oa.model.system.DepUsers" table="dep_users" select-before-update="false" dynamic-update="false" dynamic-insert="false" optimistic-lock="version"> 
+    <id name="depUserId" column="depUserId" type="java.lang.Long" length="19"> 
+      <generator class="sequence">
+        <param name="sequence">S_dep_users</param>
+      </generator> 
+    </id>  
+    <property name="isMain" type="java.lang.Short" update="true" insert="true" access="property" column="isMain" length="5" not-null="false" unique="false"/>  
+    <property name="sn" type="java.lang.Integer" update="true" insert="true" access="property" column="sn" length="10" not-null="false" unique="false"/>  
+    <!-- imported bi-directional many-to-one association to Department -->  
+    <many-to-one name="department" class="com.htsoft.oa.model.system.Department" not-null="false" fetch="select"> 
+      <column name="depId"/> 
+    </many-to-one>  
+    <!-- imported bi-directional many-to-one association to AppUser -->  
+    <many-to-one name="appUser" class="com.htsoft.oa.model.system.AppUser" not-null="false" fetch="select"> 
+      <column name="userId"/> 
+    </many-to-one> 
+  </class> 
+</hibernate-mapping>
